@@ -1,0 +1,12 @@
+p.title {
+    font-size: 59px;
+    font-family: sans-serif;
+    color: black;
+    font-weight: 600;
+    text-align: left;
+}
+
+div.title {
+    width: 1120px;
+    margin: 20px auto 0px auto;
+}
