@@ -4,41 +4,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap 5.0 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>ICA Class</title>
+  <title>ICA Index</title>
+  <style>
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    li {
+      margin: 2px 0px 0px 0px;
+    }
+
+    .classes {
+      float: left;
+      margin: 0px 0px 0px 0px;
+    }
+
+    .homeworks {
+      float: left;
+      margin: 0px 0px 0px 100px;
+    }
+
+    .website {
+      float: left;
+      margin: 0px 0px 0px 100px;
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./website/Home.html">Website</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hw1/hw1.html">HW1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hw2/Home.html">HW2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hw3/homework3.html">HW3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hw4/homework4.html">HW4</a>
-          </li>
-      </div>
-    </div>
-  </nav>
-  <!-- Bootstrap 5.0 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <div class="classes">
+    <h1>Classes</h1>
+    <ol>
+      <li><a href="./classes/class1.html">Class 1</a></li>
+      <li><a href="./classes/class2.html">Class 2</a></li>
+      <li><a href="./classes/class3.html">Class 3</a></li>
+      <li><a href="./classes/class4.html">Class 4</a></li>
+    </ol>
+  </div>
+  <div class="homeworks">
+    <h1>Homeworks</h1>
+    <ol>
+      <li><a href="./homeworks/hw1/homework1.html">Homework 1</a></li>
+      <li><a href="./homeworks/hw2/Home.html">Homework 2</a></li>
+      <li><a href="./homeworks/hw3/homework3.html">Homework 3</a></li>
+      <li><a href="./homeworks/hw4/homework4.html">Homework 4</a></li>
+      <li><a href="./homeworks/hw5/homework5.html">Homework 5</a></li>
+    </ol>
+  </div>
+  <div class="website">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="website/Home.html">Home</a></li>
+      <li><a href="website/Schedules.html">Schedules</a></li>
+      <li><a href="website/Services.html">Services</a></li>
+      <li><a href="website/Messages.html">Messages</a></li>
+      <li><a href="website/WeeklyBulletin.html">Weekly Bulletin</a></li>
+      <li><a href="website/Library.html">Library</a></li>
+      <li><a href="website/Visit Us.html">Visit Us</a></li>
+    </ul>
+  </div>
 </body>
 </html>

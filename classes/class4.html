@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICA Class 4</title>
+</head>
+<body>
+  <script>
+    const students = ["Charlie", "John", "Kurt", "Matthew"];
+
+    for (let i = 0; i < students.length; i++) {
+      console.log(students[i]);
+    }
+
+    // console.log(students[2]);
+
+    console.log("================ Random Index ===============")
+
+    // Math.random() picks a random number from 0 - 0.999999999999
+    // let randIndex = Math.floor(Math.random() * students.length);
+
+    for (let i = 0; i < students.length; i++) {
+      let randIndex = Math.floor(Math.random() * students.length);
+      console.log(students[randIndex]);
+    }
+
+    // JS built in functions - confirm(), alert(), prompt()
+    const useUpperCase = confirm("To include uppercase in your password?");
+    const useLowerCase = confirm("To include lowercase in your password?");
+    const useSpecialChars = confirm("To include special characters for your password?");
+    const useNumeric = confirm("To include numbers in your password?");
+    const useSpaces = confirm("To include spaces in your password?");
+    const pwLength = prompt("What is the length of your password");
+
+    console.log("useUpperCase", useUpperCase);
+    console.log("useLowerCase", useLowerCase);
+    console.log("useSpecialChars", useSpecialChars);
+    console.log("useNumeric", useNumeric);
+    console.log("useSpaces", useSpaces);
+    console.log("pwLength", pwLength);
+  </script>
+</body>
+</html>
