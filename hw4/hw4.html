@@ -23,7 +23,7 @@
        "use strict";
 
         function buttonFunc() {
-          text=""
+          let text=""
             for (let i = 0; i < 10; i++) {
               if (i === 8) { break; }
               if (i === 3) { continue; }
@@ -31,9 +31,9 @@
             }
 
            document.getElementById('text').innerHTML = text;
-          }
+        }
         function typeOf(){
-          text=""
+          let text=""
           text+= "Me is a " + typeof "Me" + "<br>"
           text+= 3.14 + " is a " + typeof 3.14 + "<br>"
           text+= {name:'Bob', grade:11} + " is a " + typeof {name:'Bob', grade:11} + "<br>"
@@ -41,7 +41,7 @@
           document.getElementById('text').innerHTML = text;
         }
         function bitsAndRegex(){
-          text=""
+          let text=""
           text+= 7 & 11 + ", then " //AND
           text+= 3 ^ 6 + ", then " //XOR
           text+= 11 >>> 7 + "<br>" //Zero fill right shift
