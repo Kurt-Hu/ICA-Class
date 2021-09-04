@@ -902,5 +902,83 @@
         document.getElementById("demo123").innerHTML = typeof myCar;
         document.getElementById("demo124").innerHTML = typeof null;
     </script>
+
+    <p id="demo125"></p>
+    <p id="demo126"></p>
+    <p id="demo127"></p>
+    <script>
+        document.getElementById("demo125").innerHTML = Number("3.14");
+        document.getElementById("demo126").innerHTML = Number(" ");
+        document.getElementById("demo127").innerHTML = Number("99 88");
+    </script>
+
+    <p id="demo128"></p>
+    <script>
+        // The urany + operator turns a variable into a number
+        let x19 = "5"; // String
+        let y19 = + x19; // Number
+        document.getElementById("demo128").innerHTML = typeof y19;
+    </script>
+
+    <p id="demo129"></p>
+    <p id="demo130"></p>
+    <script>
+        document.getElementById("demo129").innerHTML = typeof String(123);
+        document.getElementById("demo130").innerHTML = typeof (123).toString();
+    </script>
+
+    <p id="demo131"></p>
+    <script>
+        const pattern1 = /e/;
+        document.getElementById("demo131").innerHTML = pattern1.test("The best things in life are free!");
+    </script>
+
+    <p id="demo132"></p>
+    <script>
+        try {
+            adddlert("Welcome guest!");
+        }
+        catch(err) {
+            document.getElementById("demo132").innerHTML = err.message;
+        }
+    </script>
+
+    <p>Please input a number between 5 and 10:</p>
+    <input id="demo133" type="text" />
+    <button type="button" onclick="function13()">Test Input</button>
+    <p id="demo134"></p>
+    <script>
+        function function13() {
+            const message1 = document.getElementById("demo134");
+            message1.innerHTML = "";
+            let x20 = document.getElementById("demo133").value;
+            try {
+                if (x20 == "") throw "empty";
+                if (isNaN(x20)) throw "not a number";
+                x20 = Number(x20);
+                if (x20 < 5) throw "too low";
+                if (x20 > 10) throw "too high";
+            }
+            catch(err) {
+                message1.innerHTML = "Input is " + err;
+            }
+            finally {
+                document.getElementById("demo133").value = "";
+            }
+        }
+    </script>
+
+<p id="demo134"></p>
+
+<script>
+    let text3 = '{"employees":[' +
+    '{"firstName":"John","lastName":"Doe" },' +
+    '{"firstName":"Anna","lastName":"Smith" },' +
+    '{"firstName":"Peter","lastName":"Jones" }]}';
+
+    const obj = JSON.parse(text3);
+    document.getElementById("demo134").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
 </body>
 </html>

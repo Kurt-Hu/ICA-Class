@@ -5,8 +5,181 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICA Homework 5</title>
+  <style>
+    div.options {
+      margin: 0px 0px 10px 0px;
+    }
+    
+    p.options-text {
+      display: inline-block;
+      margin: 0px 0px 0px 0px;
+    }
+
+    button.options-button {
+      display: inline-block;
+      margin: 0px 0px 0px 20px;
+    }
+  </style>
 </head>
 <body>
-  
+  <h1>Password Generator</h1>
+  <h3>Options</h3>
+  <div class="options">
+    <p class="options-text" id="text1"></p>
+    <button class="options-button" type="button" onclick="changeNumbers()">Change</button>
+  </div>
+  <div class="options">
+    <p class="options-text" id="text2"></p>
+    <button class="options-button" type="button" onclick="changeLowercaseLetters()">Change</button>
+  </div>
+  <div class="options">
+    <p class="options-text" id="text3"></p>
+    <button class="options-button" type="button" onclick="changeUppercaseLetters()">Change</button>
+  </div>
+  <div class="options">
+    <p class="options-text" id="text4"></p>
+    <button class="options-button" type="button" onclick="changeSpecialCharacters()">Change</button>
+  </div>
+  <div class="options">
+    <p class="options-text" id="text5"></p>
+    <button class="options-button" type="button" onclick="changeSpaces()">Change</button>
+  </div>
+  <div class="options">
+    <p class="options-text" id="text6"></p>
+    <button class="options-button" type="button" onclick="changeLength()">Change</button>
+  </div>
+  <div>
+    <button type="button" onclick="generatePassword()">Generate Password</button>
+    <p id="password-text"></p>
+  </div>
+
+  <script>
+    var trueOptions = [];
+    var generatedPassword = [];
+
+    var possibleNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var possibleLowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var possibleUppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var possibleSpecialCharacters = ["@", "#", "$", "%", "&", "*", ".", ",", "<",">", "/", "\\", "\'", "\"", ";", ":", "?"];
+    var possibleSpaces = [" "];
+
+    var includeNumbers = false;
+    var includeLowercaseLetters = false;
+    var includeUppercaseLetters = false;
+    var includeSpecialCharacters = false;
+    var includeSpaces = false;
+    var length = 8;
+    
+    document.getElementById("text1").innerHTML = "Numbers: " + includeNumbers;
+    document.getElementById("text2").innerHTML = "Lowercase Letters: " + includeLowercaseLetters;
+    document.getElementById("text3").innerHTML = "Uppercase Letters: " + includeUppercaseLetters;
+    document.getElementById("text4").innerHTML = "Special Characters: " + includeSpecialCharacters;
+    document.getElementById("text5").innerHTML = "Spaces: " + includeSpaces;
+    document.getElementById("text6").innerHTML = "length: " + length;
+
+    function changeNumbers() {
+      includeNumbers = confirm("Would you like to include numbers in your password?");
+      document.getElementById("text1").innerHTML = "Numbers: " + includeNumbers;
+      if (includeNumbers === true) {
+        if (trueOptions.includes("includeNumbers") === false) {
+          trueOptions[trueOptions.length] = "includeNumbers";
+        }
+      } else if (includeNumbers === false) {
+          if (trueOptions.includes("includeNumbers") === true) {
+            trueOptions.splice(trueOptions.indexOf("includeNumbers"), 1);
+          }
+        }
+    }
+    
+    function changeLowercaseLetters() {
+      includeLowercaseLetters = confirm("Would you like to lowercase in your password?");
+      document.getElementById("text2").innerHTML = "Lowercase Letters: " + includeLowercaseLetters;
+      if (includeLowercaseLetters === true) {
+        if (trueOptions.includes("includeLowercaseLetters") === false) {
+          trueOptions[trueOptions.length] = "includeLowercaseLetters";
+        }
+      } else if (includeLowercaseLetters === false) {
+          if (trueOptions.includes("includeLowercaseLetters") === true) {
+            trueOptions.splice(trueOptions.indexOf("includeLowercaseLetters"), 1);
+          }
+        }
+    }
+    function changeUppercaseLetters() {
+      includeUppercaseLetters = confirm("Would you like to include pupercase letters in your password?");
+      document.getElementById("text3").innerHTML = "Uppercase Letters: " + includeUppercaseLetters;
+      if (includeUppercaseLetters === true) {
+        if (trueOptions.includes("includeUppercaseLetters") === false) {
+          trueOptions[trueOptions.length] = "includeUppercaseLetters";
+        }
+      } else if (includeUppercaseLetters === false) {
+          if (trueOptions.includes("includeUppercaseLetters") === true) {
+            trueOptions.splice(trueOptions.indexOf("includeUppercaseLetters"), 1);
+          }
+        }
+    }
+    function changeSpecialCharacters() {
+      includeSpecialCharacters = confirm("Would you like to include special characters in your password?");
+      document.getElementById("text4").innerHTML = "Special Characters: " + includeSpecialCharacters;
+      if (includeSpecialCharacters === true) {
+        if (trueOptions.includes("includeSpecialCharacters") === false) {
+          trueOptions[trueOptions.length] = "includeSpecialCharacters";
+        }
+      } else if (includeSpecialCharacters === false) {
+          if (trueOptions.includes("includeSpecialCharacters") === true) {
+            trueOptions.splice(trueOptions.indexOf("includeSpecialCharacters"), 1);
+          }
+        }
+    }
+    function changeSpaces() {
+      includeSpaces = confirm("Would you like to include spaces in your password?");
+      document.getElementById("text5").innerHTML = "Spaces: " + includeSpaces;
+      if (includeSpaces === true) {
+        if (trueOptions.includes("includeSpaces") === false) {
+          trueOptions[trueOptions.length] = "includeSpaces";
+        }
+      } else if (includeSpaces === false) {
+          if (trueOptions.includes("includeSpaces") === true) {
+            trueOptions.splice(trueOptions.indexOf("includeSpaces"), 1);
+          }
+        }
+    }
+    function changeLength() {
+      length = prompt("What would you like the length of your password to be?");
+      document.getElementById("text6").innerHTML = "length: " + length;
+    }
+
+    var options = {includeNumbers: includeNumbers, includeLowercaseLetters: includeLowercaseLetters, includeUppercaseLetters: includeUppercaseLetters, includeSpecialCharacters: includeSpecialCharacters, includeSpaces: includeSpaces};
+
+    for (let x in options) {
+      if (options[x] === true) {
+        trueOptions[trueOptions.length] = x;
+      }
+    }
+
+    function generatePassword() {
+      generatedPassword.splice(0, generatedPassword.length)
+      for (let i = 0; i < length; i++) {
+        var characterTypeIndex = Math.floor(Math.random() * trueOptions.length);
+        var characterType = trueOptions[characterTypeIndex];
+        if (characterType === "includeNumbers") {
+          let characterIndex = Math.floor(Math.random() * possibleNumbers.length);
+          generatedPassword[generatedPassword.length] = possibleNumbers[characterIndex];
+        } else if (characterType === "includeLowercaseLetters") {
+          let characterIndex = Math.floor(Math.random() * possibleLowercaseLetters.length);
+          generatedPassword[generatedPassword.length] = possibleLowercaseLetters[characterIndex];
+        } else if (characterType === "includeUppercaseLetters") {
+          let characterIndex = Math.floor(Math.random() * possibleUppercaseLetters.length);
+          generatedPassword[generatedPassword.length] = possibleUppercaseLetters[characterIndex];
+        } else if (characterType === "includeSpecialCharacters") {
+          let characterIndex = Math.floor(Math.random() * possibleSpecialCharacters.length);
+          generatedPassword[generatedPassword.length] = possibleSpecialCharacters[characterIndex];
+        } else if (characterType === "includeSpaces") {
+          let characterIndex = Math.floor(Math.random() * possibleSpaces.length);
+          generatedPassword[generatedPassword.length] = possibleSpaces[characterIndex];
+        }
+      }
+      alert(generatedPassword.join(""));
+    }
+  </script>
 </body>
 </html>

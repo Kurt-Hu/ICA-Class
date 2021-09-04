@@ -541,7 +541,7 @@
         // .replace() replaces the first parameter with the second parameter
         // It will only replace the first match by default
         // text.replace is case sensitive
-        strings8 = "Please visit Microsoft! Please visit Microsoft!";
+        let strings8 = "Please visit Microsoft! Please visit Microsoft!";
         document.getElementById("demo50").innerHTML = strings8;
         document.getElementById("demo51").innerHTML = strings8;
         document.getElementById("demo52").innerHTML = strings8;
@@ -558,11 +558,328 @@
             document.getElementById("demo52").innerHTML = strings11;
         }
     </script>
+    
+    <br />
+    <br />
 
     <button type="button" id="demo53" onclick="function6()"></button>
     <button type="button" id="demo54" onclick="function7()"></button>
     <script>
-        
+        let strings12 = "Hello World!";
+        let strings13 = strings12.toUpperCase();
+        let strings14 = strings12.toLowerCase();
+        document.getElementById("demo53").innerHTML = strings12;
+        document.getElementById("demo54").innerHTML = strings12;
+        function function6() {
+          document.getElementById("demo53").innerHTML = strings13;
+        }
+        function function7() {
+          document.getElementById("demo54").innerHTML = strings14;
+        }
+    </script>
+
+    <p id="demo55"></p>
+    <p id="demo56"></p>
+    <script>
+        let strings15 = "Hello";
+        let strings16 = "World!";
+        let strings17 = strings15.concat(" ", strings16);
+        let strings18 = "Hello".concat(" ", "World!");
+        document.getElementById("demo55").innerHTML = strings17;
+        document.getElementById("demo56").innerHTML = strings18;
+    </script>
+
+    <button type="button" id="demo57" onclick="function8()">Alert</button>
+    <button type="button" id="demo58" onclick="function9()">Alert</button>
+    <script>
+        let strings19 = "                 Hello World     ";
+        function function8() {
+            alert(strings19);
+        }
+        function function9() {
+            alert(strings19.trim());
+        }
+    </script>
+
+    <p id="demo59"></p>
+    <p id="demo60"></p>
+    <script>
+        let strings20 = "5";
+        let strings21 = strings20.padStart(4, 0);
+        let strings22 = strings20.padEnd(4, 0);
+        document.getElementById("demo59").innerHTML = strings21;
+        document.getElementById("demo60").innerHTML = strings22;
+    </script>
+
+    <p id="demo61"></p>
+    <p id="demo62"></p>
+    <script>
+        let strings23 = "Hello World";
+        let strings24 = strings23.charAt(0);
+        let strings25 = strings23[0];
+        document.getElementById("demo61").innerHTML = strings24;
+        document.getElementById("demo62").innerHTML = strings25;
+    </script>
+
+    <p id="demo63"></p>
+    <script>
+        let strings26 = "a, b, c, d, e, f";
+        let array1 = strings26.split(",");
+        document.getElementById("demo63").innerHTML = array1[0];
+    </script>
+
+    <p id="demo64"></p>
+    <p id="demo65"></p>
+    <p id="demo66"></p>
+    <p id="demo67"></p>
+    <p id="demo68"></p>
+    <p id="demo69"></p>
+    <script>
+        let strings27 = "Please locate where 'locate' occurs!";
+        document.getElementById("demo64").innerHTML = strings27.indexOf("locate");
+        document.getElementById("demo65").innerHTML = strings27.lastIndexOf("locate");
+        document.getElementById("demo66").innerHTML = strings27.indexOf("John");
+        document.getElementById("demo67").innerHTML = strings27.indexOf("locate", 15);
+        document.getElementById("demo68").innerHTML = strings27.lastIndexOf("locate", 15);
+        document.getElementById("demo69").innerHTML = strings27.search("locate");
+    </script>
+
+    <p id="demo70"></p>
+    <script>
+        let strings28 = "The rain in SPAIN stays mainly in the plain";
+        document.getElementById("demo70").innerHTML = strings28.match(/ain/gim);
+    </script>
+
+    <p id="demo71"></p>
+    <p id="demo72"></p>
+    <p id="demo73"></p>
+    <p id="demo74"></p>
+    <script>
+        let strings29 = "Hello world, welcome to the universe.";
+        document.getElementById("demo71").innerHTML = strings29.includes("world");
+        document.getElementById("demo72").innerHTML = strings29.includes("world", 12);
+        document.getElementById("demo73").innerHTML = strings29.startsWith("Hello");
+        document.getElementById("demo74").innerHTML = strings29.endsWith("universe.");
+    </script>
+
+    <p id="demo75"></p>
+    <script>
+        // Template literals allow for quotes in a string
+        // They allow multiline strings
+        // They allow variables in strings
+        let name1 = "Johnny";
+        let strings30 = `He's often called "${name1}"`;
+        document.getElementById("demo75").innerHTML = strings30;
+    </script>
+
+    <p id="demo76"></p>
+    <p id="demo77"></p>
+    <p id="demo78"></p>
+    <script>
+        let num1 = 123;
+        document.getElementById("demo76").innerHTML = num1.toString();
+        document.getElementById("demo77").innerHTML = (123).toString();
+        document.getElementById("demo78").innerHTML = (100 + 23).toString();
+    </script>
+
+    <p id="demo79"></p>
+    <p id="demo80"></p>
+    <p id="demo81"></p>
+    <script>
+        let num2 = 9.656;
+        document.getElementById("demo79").innerHTML = num2.toExponential(2);
+        document.getElementById("demo80").innerHTML = num2.toFixed(2);
+        document.getElementById("demo81").innerHTML = num2.toPrecision(2);
+        console.log(typeof num2.valueOf())
+    </script>
+
+    <p id="demo82"></p>
+    <p id="demo83"></p>
+    <p id="demo84"></p>
+    <p id="demo85"></p>
+    <p id="demo86"></p>
+    <p id="demo87"></p>
+    <script>
+        const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo82").innerHTML = fruits1.join(" * ");
+        document.getElementById("demo83").innerHTML = fruits1.pop();
+        document.getElementById("demo84").innerHTML = fruits1.shift();
+        document.getElementById("demo85").innerHTML = fruits1.unshift("Lemon");
+        document.getElementById("demo86").innerHTML = fruits1[fruits1.length] = "Kiwi";
+        delete fruits1[0];
+        document.getElementById("demo87").innerHTML = fruits1;
+    </script>
+
+    <p id="demo88"></p>
+    <p id="demo89"></p>
+    <script>
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo88").innerHTML = fruits2.sort();
+        document.getElementById("demo89").innerHTML = fruits2.reverse();
+    </script>
+
+    <p id="demo90"></p>
+    <script>
+        const numbers1 = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo90").innerHTML = numbers1.sort(function(a, b){return a - b});
+    </script>
+
+    <p id="demo91"></p>
+    <script>
+        const numbers2 = [45, 4, 9, 16, 25];
+        let text1 = "";
+        numbers2.forEach(function10);
+        document.getElementById("demo91").innerHTML = text1;
+        function function10(value, index, array) {
+            text1 += value + "<br />";
+        }
+    </script>
+
+    <p id="demo92"></p>
+    <script>
+        const numbers3 = [45, 4, 9, 16, 25];
+        let text2 = numbers3.reduce(function11);
+        document.getElementById("demo92").innerHTML = "The sum is " + text2;
+        function function11(total, value, index, array) {
+            return total + value;
+        }
+    </script>
+
+    <p id="demo93"></p>
+    <p id="demo94"></p>
+    <script>
+        const date1 = new Date();
+        const date2 = new Date(2021, 0, 1, 0, 0, 0);
+        document.getElementById("demo93").innerHTML = date1;
+        document.getElementById("demo94").innerHTML = date2;
+    </script>
+
+    <p id="demo95"></p>
+    <p id="demo96"></p>
+    <p id="demo97"></p>
+    <p id="demo98"></p>
+    <p id="demo99"></p>
+    <p id="demo100"></p>
+    <p id="demo101"></p>
+    <p id="demo102"></p>
+    <p id="demo103"></p>
+    <p id="demo104"></p>
+    <script>
+        document.getElementById("demo95").innerHTML = Math.round(4.5);
+        document.getElementById("demo96").innerHTML = Math.ceil(4.5);
+        document.getElementById("demo97").innerHTML = Math.floor(4.5);
+        document.getElementById("demo98").innerHTML = Math.trunc(4.5);
+        document.getElementById("demo99").innerHTML = Math.sign(4.5);
+        document.getElementById("demo100").innerHTML = Math.pow(4, 5);
+        document.getElementById("demo101").innerHTML = Math.sqrt(64);
+        document.getElementById("demo102").innerHTML = Math.abs(-4.5);
+        document.getElementById("demo103").innerHTML = Math.min(0, 150, 30, 20, -8, -200);
+        document.getElementById("demo104").innerHTML = Math.max(0, 150, 30, 20, -8, -200);
+    </script>
+
+    <button type="button" id="demo105" onclick="document.getElementById('demo106').innerHTML = function12(1, 100)"></button>
+    <p id="demo106"></p>
+    <script>
+        document.getElementById("demo106").innerHTML = "Button above must be pressed.";
+        document.getElementById("demo105").innerHTML = "Press this button to get a random number between 1 and 100.";
+        function function12(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+    <p id="demo107"></p>
+    <script>
+        document.getElementById("demo107").innerHTML = (10 > 9);
+    </script>
+
+    <p id="demo108"></p>
+    <script>
+        let hour1 = new Date().getHours();
+        let greeting1;
+        if (hour1 < 18) {
+            greeting1 = "Good day";
+        } else {
+            greeting1 = "Good evening";
+        }
+        document.getElementById("demo108").innerHTML = greeting1;
+    </script>
+
+    <p id="demo109"></p>
+    <script>
+        let strings31;
+        switch (new Date().getDay()) {
+            case 6:
+                strings31 = "Today is Saturday";
+                break;
+            case 0:
+                strings31 = "Today is Sunday";
+                break;
+            default:
+                strings31 = "Looking forward to the weekend";
+        }
+        document.getElementById("demo109").innerHTML = strings31;
+    </script>
+
+    <p id="demo110"></p>
+    <script>
+        const cars3 = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        let strings32 = "";
+        for (let i = 0; i < cars3.length; i++) {
+            strings32 += cars3[i] + "<br />";
+        }
+        document.getElementById("demo110").innerHTML = strings32;
+    </script>
+
+    <p id="demo111"></p>
+    <script>
+        const person6 = {firstName2: "John", lastName2: "Doe", age2: 25};
+        let strings33 = "";
+        for (let x in person6) {
+            strings33 += person6[x] + " ";
+        }
+        document.getElementById("demo111").innerHTML = strings33;
+    </script>
+
+    <p id="demo112"></p>
+    <script>
+        const cars = ["BMW", "Volvo", "Mini"];
+
+        let strings34 = "";
+        for (let x of cars) {
+            strings34 += x + "<br />";
+        }
+        document.getElementById("demo112").innerHTML = strings34;
+    </script>
+
+    <p id="demo113"></p>
+    <script>
+        let strings35 = "";
+        let i = 0;
+        while (i < 10) {
+            strings35 += "The number is " + i + "<br />";
+            i++;
+        }
+        document.getElementById("demo113").innerHTML = strings35;
+    </script>
+
+    <p id="demo114"></p>
+    <script>
+        let strings36 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) { break; }
+            strings36 += "The number is " + i + "<br />";
+        }
+        document.getElementById("demo114").innerHTML = strings36;
+    </script>
+
+    <p id="demo115"></p>
+    <script>
+        let strings37 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) { continue; }
+            strings37 += "The number is " + i + "<br />";
+        }
+        document.getElementById("demo115").innerHTML = strings37;
     </script>
 </body>
 </html>
