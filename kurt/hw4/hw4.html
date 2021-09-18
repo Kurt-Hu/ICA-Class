@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW4</title>
+</head>
+<body>
+  <script>
+    // "use strict";
+
+    for (let i = 0; i < 20; i++) {
+      if (i / 7 == 2) {
+        console.log(i);
+        break;
+      }
+    }
+
+    for (let i = 0; i < 20; i++) {
+      if (i == 0) {
+        continue;
+      } else if (8 / i == 2) {
+        console.log(i);
+      }
+    }
+
+    console.log(typeof "this is a string");
+    console.log(typeof 13.6);
+    console.log(typeof 9);
+    console.log(typeof false);
+    console.log(typeof [3, 4, 5, 6]);
+    console.log(typeof {
+      name: "Kurt",
+      age: 19
+    });
+    console.log(typeof function() {
+      return 5;
+    });
+
+    console.log(5 + parseInt("6"));
+
+    console.log(5 & 1); // returns 1 if odd, 0 if even
+    console.log(5 << 2); // multiplies by 4
+
+    console.log(/[jkl]/.test("abcdefghijklmnopqrstuvwxyz"));
+
+    let globalScope = 7;
+    {
+      let blockScope = 5;
+    }
+    function scope() {
+      let functionScope = 10;
+      console.log(functionScope);
+    }
+
+    try {
+      console.log(globalScope);
+      console.log(blockScope);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      undefinedfunction();
+    } catch (err) {
+      console.log(err);
+    }
+
+    //declare your variables at the top for good practice, don't do this
+    hoist = 5;
+    console.log(hoist);
+    var hoist;
+
+    const person = {
+      first: "Dow",
+      last: "Jones",
+      print: () => {
+        console.log(this.first + " " + this.last);
+      }
+    }
+
+    person.print();
+
+    class Book {
+      constructor(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+      }
+
+      age() {
+        return (new Date().getFullYear() - this.year);
+      }
+    }
+
+    let myBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+    console.log(myBook.age());
+
+    let jsonBall = '{ "color":"blue", "size":"large" }'
+    let ball = JSON.parse(jsonBall)
+    console.log(ball.color);
+  </script>
+</body>
+</html>

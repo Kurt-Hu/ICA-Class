@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW3</title>
+</head>
+<body>
+  <div>
+    <p id="demo">Original Demo Text</p>
+    <button type="button" onclick="changeText()">Change Text</button>
+  </div>
+
+  <script>
+    function changeText() {
+      document.getElementById("demo").innerHTML = "New Demo Text";
+    }
+
+    function add(a, b) {
+      return a + b;
+    }
+
+    function ring() {
+      console.log("ring");
+    }
+    /*
+    Multi-line comment:
+      Calling document.write after the document is finished loading will wipe the page
+      Avoid using document.write as it can slow down load speeds
+    */
+    document.write("This text was written using document.write");
+
+    // These are variables
+    let x = 5;
+    let y = 4.3;
+    let word = "Hello"
+    let coding = true;
+    const PI = 3.141592653589793;
+    const arr = [5, 3, 4];
+    const bike = {
+      color: "red",
+      size: "large",
+      wheels: 2,
+      bell: ring
+    }
+
+    console.log(typeof y);
+    console.log(add(x, y));
+    bike.bell();
+
+    console.log("len: " + word.length);
+    console.log(word.slice(3, 5));
+    console.log("Index of 'll': " + word.indexOf("ll"));
+
+    console.log(`Exponential notation: ${y.toExponential()}`);
+    console.log(arr.toString());
+    arr.sort();
+    console.log(arr.toString());
+    
+    const date = new Date();
+    console.log(`Month: ${date.getMonth()}`);
+    console.log(`Time: ${date.getTime()}`);
+
+    console.log(`Random int from 1 to 10: ${1 + Math.floor(Math.random() * 10)}`);
+
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] += 1;
+    }
+    console.log(arr);
+
+    //this gives the index
+    for (i in arr) {
+      arr[i] += 2;
+    }
+    console.log(arr);
+
+    //this gives the value
+    for (num of arr) {
+      console.log(num);
+    }
+    console.log(arr);
+
+    let count = 0;
+    while (count < 5) {
+      count++;
+    }
+    console.log(count);
+  </script>
+</body>
+</html>
