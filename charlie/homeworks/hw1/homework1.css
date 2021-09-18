@@ -1,0 +1,31 @@
+header {
+  color: rgb(0, 0, 255);
+}
+
+.bordered {
+  border-style: dotted dashed solid double;
+}
+
+.pad {
+  padding: 100px;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.bg {
+  background-color: coral;
+}
+
+.change-hover:hover {
+  background-color: rgb(255, 182, 155);
+}
+
+.dot {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(26, 67, 204);
+  border-radius: 50%;
+  display: inline-block;
+}
