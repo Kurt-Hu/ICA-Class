@@ -48,10 +48,9 @@
     <p class="options-text" id="text6"></p>
     <button class="options-button" type="button" onclick="changeLength()">Change</button>
   </div>
-  <div>
-    <button type="button" onclick="generatePassword()">Generate Password</button>
-    <p id="password-text"></p>
-  </div>
+  
+  <button type="button" onclick="generatePassword()">Generate Password</button>
+  <p id="password"></p>
 
   <script>
     var trueOptions = [];
@@ -69,7 +68,7 @@
     var includeSpecialCharacters = false;
     var includeSpaces = false;
     var length = 8;
-    
+
     document.getElementById("text1").innerHTML = "Numbers: " + includeNumbers;
     document.getElementById("text2").innerHTML = "Lowercase Letters: " + includeLowercaseLetters;
     document.getElementById("text3").innerHTML = "Uppercase Letters: " + includeUppercaseLetters;
@@ -148,16 +147,8 @@
       document.getElementById("text6").innerHTML = "length: " + length;
     }
 
-    var options = {includeNumbers: includeNumbers, includeLowercaseLetters: includeLowercaseLetters, includeUppercaseLetters: includeUppercaseLetters, includeSpecialCharacters: includeSpecialCharacters, includeSpaces: includeSpaces};
-
-    for (let x in options) {
-      if (options[x] === true) {
-        trueOptions[trueOptions.length] = x;
-      }
-    }
-
     function generatePassword() {
-      generatedPassword.splice(0, generatedPassword.length)
+      generatedPassword.splice(0, generatedPassword.length);
       for (let i = 0; i < length; i++) {
         var characterTypeIndex = Math.floor(Math.random() * trueOptions.length);
         var characterType = trueOptions[characterTypeIndex];
