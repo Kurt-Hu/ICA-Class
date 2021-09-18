@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW3</title>
+  </head>
+  <body>
+    <div>
+      <p id="text">This is some text</p>
+      <button type="button"
+        onclick="document.getElementById('text').innerHTML = 'This is some updated text!'"> Change Text
+      </button>
+      <button type="button" onclick="buttonFunc()">Function</button>
+      <button type="button" onclick="document.write(7 + 11)">Seven Eleven</button>
+      <button type="button" onclick="usingNamesAndVars()">Who is it?</button>
+      <button type="button" onclick="document.getElementById('text').innerHTML = Date()">When is it?</button>
+      <button type="button" onclick="usingObjects()">Who meets who?</button>
+      <button type="button" onclick="slicingStrings()">Slicing?</button>
+      <button type="button" onclick="usingArrays()">Dog?</button>
+      <button type="button" onclick="usingIteration()">Numbers?</button>
+      <button type="button" onclick="usingLoops()">Cereal?</button>
+    </div>
+    
+    <script>
+        function buttonFunc() {
+            document.getElementById('text').innerHTML = "This is some updated text by a function.";
+            }
+        //Changes text to Bob Builder
+        function usingNamesAndVars(){
+            /*This text
+            will not
+            run*/
+            let firstName = "Bob"
+            let lastName = "Builder"
+            let age = "25"
+            document.getElementById('text').innerHTML = firstName + lastName + ", age " + age;
+        }
+        function usingObjects(){
+            let student1 = {firstName:"Dora", lastName:"Explorer", age: 12, grade: 'D', hasGraduated: false};
+            let student2 = {firstName:"Davy", lastName:"Jones", age: 84, grade: 'C', hasGraduated: true};
+            document.getElementById('text').innerHTML = student1.firstName+", meets "+student2.firstName
+        }
+        function slicingStrings(){
+            let str = "Orange, Watermelon, Ice Cream";
+            document.getElementById('text').innerHTML = str.slice(0, 7);
+        }
+        function usingArrays(){
+            let dogs = new Array("Shiba", "Golden Retriever", "Dog");
+            dogs.sort()
+            for (let i = 0; i < dogs.length; i++) {
+                dogs[i] = dogs[i]+" Bark";
+            }
+            document.getElementById('text').innerHTML = dogs.join("...")
+        }
+        function usingIteration(){
+            let numbers1 = [4.1, 4.7, 9.2];
+            let numbers2 = numbers1.map(myFunction);
+            let numbers3 = numbers2.map(myFunction2);
+
+
+            function myFunction(value) {
+                return Math.trunc(value);
+            }
+            function myFunction2(value) {
+                return Math.floor(Math.random()*value)+1;
+            }
+            document.getElementById('text').innerHTML = numbers2.join(" AND ")+", then "+numbers3.join(" AND ");
+        }
+        function usingLoops(){
+            let cereals = ["Fruit Loops", "Cocoa Puffs", "Cinnamon Toast Crunch", "Lucky Charms", "Apple Jacks"];
+            let text="To demonstrate Forloops, we do ";
+            for (let i = 0; i < cereals.length; i++) {
+                text += cereals[i].slice(0, 2)+", then "
+            }
+            text+="we move on to show ForIns with "
+            for (let x in cereals) {
+                text += cereals[x].length.toString() +", and "
+            }  
+            text+="to demonstrate ForOfs we use "
+            for (x of cereals) {
+                text += Math.pow(x.length, 2) + ", so "
+            }
+            text+="then for while loops we have "
+            x=0;
+            while (x < cereals.length) {
+                text += x + ", or ";
+                x++;
+            }
+            text+=" then we are finished!"
+            document.getElementById('text').innerHTML = text;
+        }
+    </script>
+
+  </body>
+</html>

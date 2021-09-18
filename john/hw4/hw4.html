@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW4</title>
+  </head>
+  <body>
+    <div>
+      <p id="text">This is some text</p>
+      <button type="button" onclick="buttonFunc()">Breaks</button>
+      <button type="button" onclick="typeOf()">TypeOf</button>
+      <button type="button" onclick="bitsAndRegex()">BitsAndRegex</button>
+      <button type="button" onclick="tryCatch()">Error</button>
+      <button type="button" onclick="localGlobal()">Local vs Global</button>
+      <button type="button" onclick="usingThis()">this</button>
+      <button type="button" onclick="classes()">classes</button>
+
+    </div>
+    
+    <script>
+       "use strict";
+
+        function buttonFunc() {
+          let text=""
+            for (let i = 0; i < 10; i++) {
+              if (i === 8) { break; }
+              if (i === 3) { continue; }
+              text += "The number is " + i + "<br>";
+            }
+
+           document.getElementById('text').innerHTML = text;
+        }
+        function typeOf(){
+          let text=""
+          text+= "Me is a " + typeof "Me" + "<br>"
+          text+= 3.14 + " is a " + typeof 3.14 + "<br>"
+          text+= {name:'Bob', grade:11} + " is a " + typeof {name:'Bob', grade:11} + "<br>"
+          text+= function () {} + " is a " + typeof function () {} + "<br>"
+          document.getElementById('text').innerHTML = text;
+        }
+        function bitsAndRegex(){
+          let text=""
+          text+= 7 & 11 + ", then " //AND
+          text+= 3 ^ 6 + ", then " //XOR
+          text+= 11 >>> 7 + "<br>" //Zero fill right shift
+
+          let subject = "Here is the search string!";
+          let n = subject.search("search");
+
+          text+= " <br> In '" + subject + "', we have 'search' at index " + n
+          document.getElementById('text').innerHTML = text;
+        }
+        function tryCatch(){
+          try {
+            document.getElementById('text').innerHTML = asdf
+          }
+          catch(err) {
+            document.getElementById('text').innerHTML = err.message;
+          }
+          finally{
+            document.getElementById('text').innerHTML+= " final"
+          }
+        }
+        let local = "Local";
+        global = "Hoisted"
+        var global;
+        function localGlobal() {
+          let local = "Now it's local"
+          document.getElementById('text').innerHTML= local + global
+        }
+        function usingThis() {
+            var bird = {
+            firstName: "Finch",
+            color: "Golden",
+            birdType: function(){
+              return this.color + " " + this.firstName;
+            }
+          };
+
+          var birdNoises = () => {
+            return ", chirp chirp!";
+          }
+
+          document.getElementById('text').innerHTML= bird.birdType() + birdNoises();
+        }
+
+        function classes() {
+          class animal {
+            constructor(name, feet) {
+              this.name = name;
+              this.feet = feet;
+              this.toString = () =>{
+                return this.name + " has " + this.feet + " feet";
+              }
+            }
+          }
+
+          let lion = new animal("lion", 4)
+          let snake = new animal("snake", 0)
+
+          document.getElementById('text').innerHTML= lion.toString() + ", " + snake.toString();
+
+          let jsonBall = '{ "drinks" : [' +
+            '{ "name":"Water" , "sugar":"0" },' +
+            '{ "name":"Diet Coke" , "sugar":"50" },' +
+            '{ "name":"Coke" , "sugar":"100" } ]}';
+
+          let ball = JSON.parse(jsonBall);
+          document.getElementById('text').innerHTML+= "<br>"+ball.drinks[1].name;
+
+        }
+
+
+
+        
+        
+    </script>
+
+  </body>
+</html>
