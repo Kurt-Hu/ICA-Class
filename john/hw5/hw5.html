@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5</title>
+  </head>
+  <body>
+    <p id="password"> Password: </p>
+    <button onclick="generatePassword()">Generate Password</button>
+
+    <script>
+      function generatePassword() {
+        const useUpperCase = confirm("Include uppercase for your password?");
+        const useLowerCase = confirm("Include lowercase for your password?");
+        const useSpecialChars = confirm("Include special characters for your password?");
+        const useNumeric = confirm("Include numbers for your password?");
+        const useSpaces = confirm("Include spaces for your password?");
+        const pwLength = prompt("What is the length of your password?");
+    
+        console.log("useUpperCase", useUpperCase);
+        console.log("useLowerCase", useLowerCase);
+        console.log("useSpecialChars", useSpecialChars);
+        console.log("useNumeric", useNumeric);
+        console.log("useSpaces", useSpaces);
+        console.log("pwLength", pwLength);
+
+        if (isNaN(pwLength)) {
+          alert("Enter a valid number for the password length.");
+        } else {
+          let elements = ""
+          if (useUpperCase) {
+            elements = elements.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+          }
+          if (useLowerCase){
+          elements = elements.concat("abcdefghijklmnopqrstuvwxyz");
+          }
+          if (useSpecialChars){
+            elements = elements.concat("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
+          }
+          if (useNumeric){
+            elements = elements.concat("1234567890");
+          }
+          if (useSpaces){
+            elements = elements.concat(" ");
+          }
+
+          document.getElementById("password").innerHTML = "Password: " + getStringFromElements(elements, pwLength);
+        }
+
+        function getStringFromElements(elements, pwLength) {
+          let pw = "";
+          for (let i = 0; i < pwLength; i++) {
+            pw = pw.concat(elements[Math.floor(Math.random() * elements.length)]);
+          }
+
+          return pw;
+        }
+      }
+
+
+    </script>
+  </body>
+</html>
